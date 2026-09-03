@@ -112,6 +112,10 @@ def summary_without_per_epoch_arrays(results):
         condition.pop("injected_residual_arcmin", None)
     if "data" in out and "source" in out["data"]:
         out["data"]["source"] = "data/historical/mars_declinations.csv"
+    # The extreme declinations and the altitudes derived from them are observed values; round them.
+    for block, key in (("data", "dec_deg_range"), ("data", "transit_altitude_deg_range"), ("refraction_analysis", "altitude_deg_range")):
+        if key in out.get(block, {}):
+            out[block][key] = [round(float(x), 1) for x in out[block][key]]
     out["summary_note"] = ("results.json without its per-epoch arrays (refraction scatter, held-out residuals by epoch, "
                            "injected residual vectors), which are omitted because they could reconstruct declination values "
                            "derived from Pafko's transcription; rerun run_pilot.py for the full file")

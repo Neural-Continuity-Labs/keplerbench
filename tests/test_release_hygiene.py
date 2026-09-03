@@ -31,14 +31,16 @@ def test_no_tracked_file_contains_declination_values():
         pytest.skip("epoch table not rebuilt; run `keplerbench fetch-historical`")
     rows = TABLE.read_text().splitlines()[1:]
     values = [row.split(",")[3] for row in rows]
-    probes = {value for value in values[::37]} | {f"{float(value):.4f}" for value in values[::53]}
-    probes = {probe.rstrip("0") for probe in probes if len(probe.rstrip("0")) >= 6}
+    # Full-precision values as written in the table, matched as whole numbers, so a
+    # residual that happens to share four digits with a declination is not a hit.
+    probes = sorted({value for value in values[::7] if len(value.lstrip("-")) >= 8})
+    pattern = re.compile(r"(?<![\d.\-])(" + "|".join(re.escape(p) for p in probes) + r")(?![\d])")
     offenders = []
     for path in _tracked_files():
         if path.suffix in {".xls", ".png", ".pdf", ".jpg"} or not path.is_file():
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
-        hits = [probe for probe in probes if probe in text]
+        hits = sorted({m.group(1) for m in pattern.finditer(text)})
         if hits:
             offenders.append((path.relative_to(ROOT).as_posix(), hits[:3]))
     assert not offenders, offenders
