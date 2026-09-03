@@ -43,3 +43,20 @@ def normalized_transfer_auc(evidence_counts: np.ndarray, errors: np.ndarray) -> 
     widths = np.diff(x)
     area = np.sum(widths * (values[:-1] + values[1:]) / 2.0)
     return float(area / (x[-1] - x[0]))
+
+
+def data_blind_verdict(entry_score: float | None, data_blind_score: float | None, noise_floor: float, unit: str) -> dict[str, object]:
+    """Apply the protocol's data-blind rule to a pair of scores in the same unit.
+
+    Both scores are reported. The entry earns credit only when the data-blind
+    run scores worse than the entry by more than the sub-benchmark's noise
+    floor; a difference inside the floor means the score was carried by prior
+    knowledge rather than extracted from the evidence.
+    """
+
+    if entry_score is None or data_blind_score is None:
+        return {"entry": entry_score, "data_blind": data_blind_score, "noise_floor": noise_floor, "unit": unit, "credit": None,
+                "note": "a score is missing, so the rule cannot be applied"}
+    difference = float(data_blind_score - entry_score)
+    return {"entry": float(entry_score), "data_blind": float(data_blind_score), "difference": difference,
+            "noise_floor": float(noise_floor), "unit": unit, "credit": bool(difference > noise_floor)}

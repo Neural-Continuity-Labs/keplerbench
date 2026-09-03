@@ -1,9 +1,12 @@
 {
   "submission_name": "example-harmonic-predictor",
   "capability": "prediction",
-  "evidence_setting": "synthetic",
+  "sub_benchmark": "synthetic",
   "pretraining": "none",
   "external_data": [],
+  "prior_knowledge": "none declared",
   "shared_object_frozen_before_adaptation": false,
+  "stated_uncertainty": false,
+  "data_blind_run_submitted": true,
   "notes": "Illustrative metadata only; this baseline does not claim law discovery."
 }

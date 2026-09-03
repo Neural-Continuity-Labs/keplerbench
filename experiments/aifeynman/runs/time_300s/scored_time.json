@@ -1,0 +1,183 @@
+{
+  "solution_file": "solution_pilot_t_to_dec.txt",
+  "inputs": [
+    "t_years"
+  ],
+  "metric": "median absolute residual in arcmin; percentile bootstrap of the median over epochs",
+  "resamples": 2000,
+  "seed": 23,
+  "selection_rule": "lowest training error among expressions finite on both splits",
+  "selected": {
+    "expr": "asin(0.719103162249*sin(exp((sqrt(x0)/atan(1)))))",
+    "complexity_bits": 73.00467653678554,
+    "complexity_bits_recomputed": 73.00467653678554,
+    "train": 675.444332214523,
+    "train_ci95": [
+      656.8,
+      715.91
+    ],
+    "heldout": 1065.0072454194922,
+    "heldout_ci95": [
+      1060.74,
+      1066.97
+    ]
+  },
+  "frontier": [
+    {
+      "expr": "asin(0.000006164662*exp(x0))",
+      "complexity_bits": 37.199446554896255,
+      "complexity_bits_recomputed": 37.199446554896255,
+      "train": 671.3584193241938,
+      "train_ci95": [
+        628.96,
+        722.64
+      ],
+      "heldout": NaN,
+      "heldout_ci95": [
+        NaN,
+        NaN
+      ]
+    },
+    {
+      "expr": "asin(0.719103162249*sin(exp((sqrt(x0)/atan(1)))))",
+      "complexity_bits": 73.00467653678554,
+      "complexity_bits_recomputed": 73.00467653678554,
+      "train": 675.444332214523,
+      "train_ci95": [
+        656.8,
+        715.91
+      ],
+      "heldout": 1065.0072454194922,
+      "heldout_ci95": [
+        1060.74,
+        1066.97
+      ]
+    },
+    {
+      "expr": "asin(-0.733073689844*sin(sin(exp((x0-1)))))",
+      "complexity_bits": 67.71050791580552,
+      "complexity_bits_recomputed": 67.71050791580552,
+      "train": 677.5846317600545,
+      "train_ci95": [
+        615.84,
+        707.53
+      ],
+      "heldout": 1061.8843098677519,
+      "heldout_ci95": [
+        1049.49,
+        1083.35
+      ]
+    },
+    {
+      "expr": "asin(0.096035615884*atan((x0+1)))",
+      "complexity_bits": 33.63984284725732,
+      "complexity_bits_recomputed": 33.63984284725732,
+      "train": 678.685914048984,
+      "train_ci95": [
+        626.95,
+        721.18
+      ],
+      "heldout": 1040.6434635132007,
+      "heldout_ci95": [
+        1033.98,
+        1058.58
+      ]
+    },
+    {
+      "expr": "asin(-0.675031675164*sin(exp((x0-1))))",
+      "complexity_bits": 67.59150488866514,
+      "complexity_bits_recomputed": 67.59150488866514,
+      "train": 679.9198635879317,
+      "train_ci95": [
+        615.27,
+        705.0
+      ],
+      "heldout": 1062.299572100276,
+      "heldout_ci95": [
+        1049.49,
+        1086.09
+      ]
+    },
+    {
+      "expr": "asin(-0.728458869777*cos(((x0*(exp(pi)-1))-1)))",
+      "complexity_bits": 70.70139720512385,
+      "complexity_bits_recomputed": 70.70139720512385,
+      "train": 685.774092967734,
+      "train_ci95": [
+        648.18,
+        713.87
+      ],
+      "heldout": 1065.25094698798,
+      "heldout_ci95": [
+        1017.08,
+        1080.42
+      ]
+    },
+    {
+      "expr": "tan(-2.181326682798+pi)",
+      "complexity_bits": 47.02216723384778,
+      "complexity_bits_recomputed": 47.02216723384778,
+      "train": 716.5208175741349,
+      "train_ci95": [
+        619.25,
+        763.75
+      ],
+      "heldout": 963.7083490925319,
+      "heldout_ci95": [
+        957.75,
+        990.96
+      ]
+    },
+    {
+      "expr": "tan(0.960266058215+0)",
+      "complexity_bits": 47.022167502352204,
+      "complexity_bits_recomputed": 47.022167502352204,
+      "train": 716.5208335333302,
+      "train_ci95": [
+        619.25,
+        763.75
+      ],
+      "heldout": 963.7083331333363,
+      "heldout_ci95": [
+        957.75,
+        990.96
+      ]
+    },
+    {
+      "expr": "1/(-0.052493438320*(0-1))",
+      "complexity_bits": 12.899356922923111,
+      "complexity_bits_recomputed": 12.899356922923111,
+      "train": 1059.7916666712388,
+      "train_ci95": [
+        998.81,
+        1224.92
+      ],
+      "heldout": 123.08333333790526,
+      "heldout_ci95": [
+        107.66,
+        147.33
+      ]
+    },
+    {
+      "expr": "atan(666.000000000000+(sin(pi))**(-1))",
+      "complexity_bits": 10.0,
+      "complexity_bits_recomputed": 10.0,
+      "error": "Unsupported by <class 'sympy.printing.numpy.NumPyPrinter'>: <class 'sympy.calcul"
+    },
+    {
+      "expr": "asin(0.028521332557+sin(exp(x0)))",
+      "complexity_bits": 32.60883055281616,
+      "complexity_bits_recomputed": 32.60883055281616,
+      "train": NaN,
+      "train_ci95": [
+        NaN,
+        NaN
+      ],
+      "heldout": NaN,
+      "heldout_ci95": [
+        NaN,
+        NaN
+      ]
+    }
+  ]
+}

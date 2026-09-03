@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "keplerbench"
-version = "0.1.0"
+version = "0.2.0"
 description = "A benchmark for scientific discovery from observer-centred astronomical measurements"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,6 +13,9 @@ dependencies = ["numpy>=1.24"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7.4"]
+historical = ["pandas>=2.0", "xlrd>=2.0"]
+pilot = ["scipy>=1.10"]
+figures = ["matplotlib>=3.7"]
 
 [project.scripts]
 keplerbench = "keplerbench.cli:main"
@@ -21,4 +24,5 @@ keplerbench = "keplerbench.cli:main"
 where = ["src"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests", "experiments/pilot/tests"]
+markers = ["slow: takes more than about ten seconds"]

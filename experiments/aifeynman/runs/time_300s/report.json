@@ -1,0 +1,101 @@
+{
+  "input": "pilot_t_to_dec.txt",
+  "tag": "time_300s",
+  "bf_try_time": 300,
+  "nn_epochs": 4000,
+  "ops_file": "19ops.txt",
+  "polyfit_deg": 4,
+  "aifeynman_version": "2.0.7",
+  "runtime_s": 5401.7,
+  "solution_file": "solution_pilot_t_to_dec.txt",
+  "frontier": [
+    {
+      "test_error": 1000000.0,
+      "log_error_bits": 19.931568569324174,
+      "pooled_log_error_bits": 5341.660376578879,
+      "complexity_bits": 10.0,
+      "fit_error": 1000000.0,
+      "expr": "atan(666.000000000000+(sin(pi))**(-1))"
+    },
+    {
+      "test_error": 33.85461651004622,
+      "log_error_bits": 5.098006268241781,
+      "pooled_log_error_bits": 1366.2656798887972,
+      "complexity_bits": 12.899356922923111,
+      "fit_error": 34.249387156549524,
+      "expr": "1/(-0.052493438320*(0-1))"
+    },
+    {
+      "test_error": 33.10640394301196,
+      "log_error_bits": 4.863901864253784,
+      "pooled_log_error_bits": 1303.5256996200142,
+      "complexity_bits": 32.60883055281616,
+      "fit_error": 29.119261537790834,
+      "expr": "asin(0.028521332557+sin(exp(x0)))"
+    },
+    {
+      "test_error": 33.0626525525522,
+      "log_error_bits": 4.852575509400623,
+      "pooled_log_error_bits": 1300.490236519367,
+      "complexity_bits": 33.63984284725732,
+      "fit_error": 28.891546185556386,
+      "expr": "asin(0.096035615884*atan((x0+1)))"
+    },
+    {
+      "test_error": 33.074278252950855,
+      "log_error_bits": 4.851695978105897,
+      "pooled_log_error_bits": 1300.2545221323803,
+      "complexity_bits": 37.199446554896255,
+      "fit_error": 28.873937977285514,
+      "expr": "asin(0.000006164662*exp(x0))"
+    },
+    {
+      "test_error": 32.68003934685873,
+      "log_error_bits": 4.838478437486696,
+      "pooled_log_error_bits": 1296.7122212464346,
+      "complexity_bits": 47.02216723384778,
+      "fit_error": 28.61061169068426,
+      "expr": "tan(-2.181326682798+pi)"
+    },
+    {
+      "test_error": 32.64207291865298,
+      "log_error_bits": 4.838478286346599,
+      "pooled_log_error_bits": 1296.7121807408885,
+      "complexity_bits": 47.022167502352204,
+      "fit_error": 28.610608693370004,
+      "expr": "tan(0.960266058215+0)"
+    },
+    {
+      "test_error": 33.09143079254111,
+      "log_error_bits": 4.836805103019036,
+      "pooled_log_error_bits": 1296.2637676091017,
+      "complexity_bits": 67.59150488866514,
+      "fit_error": 28.57744642174737,
+      "expr": "asin(-0.675031675164*sin(exp((x0-1))))"
+    },
+    {
+      "test_error": 33.090217462535605,
+      "log_error_bits": 4.834658625263082,
+      "pooled_log_error_bits": 1295.688511570506,
+      "complexity_bits": 67.71050791580552,
+      "fit_error": 28.534959796560482,
+      "expr": "asin(-0.733073689844*sin(sin(exp((x0-1)))))"
+    },
+    {
+      "test_error": 33.06388604540725,
+      "log_error_bits": 4.828902311901003,
+      "pooled_log_error_bits": 1294.1458195894688,
+      "complexity_bits": 70.70139720512385,
+      "fit_error": 28.42133292995689,
+      "expr": "asin(-0.728458869777*cos(((x0*(exp(pi)-1))-1)))"
+    },
+    {
+      "test_error": 32.960747990574006,
+      "log_error_bits": 4.828504545093852,
+      "pooled_log_error_bits": 1294.0392180851525,
+      "complexity_bits": 73.00467653678554,
+      "fit_error": 28.413497937659415,
+      "expr": "asin(0.719103162249*sin(exp((sqrt(x0)/atan(1)))))"
+    }
+  ]
+}

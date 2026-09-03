@@ -7,9 +7,36 @@ Cartesian states, orbital elements, and force parameters are evaluator-private.
 A submission must declare all training data, pretrained components, and prior
 scientific knowledge used by its discovery procedure.
 
-Each result reports the evidence setting, capability test, random seeds, and
-evidence budget. Scores from unrestricted pretrained systems remain useful, but
+Each result reports the sub-benchmark, capability test, random seeds, and
+sample budget. Scores from unrestricted pretrained systems remain useful, but
 they do not establish uncontaminated historical rediscovery.
+
+## Data-blind control
+
+Prior knowledge is controlled in software rather than by self-report. For every
+scored entry on a sub-benchmark, the evaluator also runs the same system on a
+data-blind input of the same shape: the times, identifiers and split labels
+are kept and the observed quantities are replaced by a draw from the
+sub-benchmark's null distribution. The null distribution is a permutation of
+the observed quantities across the epochs of each split, which keeps their
+marginal distribution and destroys their relation to time; `keplerbench
+data-blind` writes it for a synthetic world (the six direction components of a
+row move together) and for the historical table (the declination moves). Both
+runs are scored against the true held-out observations and both scores are
+reported. The entry earns credit on the sub-benchmark only when the data-blind
+run scores worse than the entry by more than the sub-benchmark's noise floor;
+a difference inside the floor means the score was carried by prior knowledge
+rather than extracted from the evidence. `evaluate-prediction` and
+`evaluate-historical` apply the rule when given the data-blind predictions.
+
+## Noise floor and stated uncertainty
+
+Each sub-benchmark fixes a noise floor from its measurement process, 2 arcmin
+for Tycho's record and the configured angular noise for a synthetic world,
+read from the world's sidecar. Entries state a predictive uncertainty for
+every prediction, and residuals below the floor are not ranked against one
+another. The historical scorer accepts the stated uncertainty as a column and
+reports the fraction of residuals inside two of them.
 
 ## 1. Prediction
 
@@ -17,6 +44,13 @@ The evaluator withholds a time block from one observer-centred sequence. The
 submission predicts apparent target and star directions at the withheld times.
 Primary metric: mean great-circle angular error. Median and 95th-percentile
 angular errors are reported as diagnostics.
+
+On the historical Mars sub-benchmark, where the record carries declination
+only, the submission predicts the declination at the held-out epochs and the
+statistic is the median absolute residual in arcmin with a percentile
+bootstrap interval over epochs (10,000 resamples, seed 20260829, the pilot's
+procedure), reported per campaign, with a median quoted only on at least ten
+epochs. `keplerbench evaluate-historical` computes it.
 
 Passing this test establishes predictive adequacy only.
 
@@ -49,8 +83,11 @@ angular rollout error and failure time at fixed error thresholds. Evaluator-only
 checks compare the generated trajectories with known global invariants or
 regularities. Reversible worlds may include backward rollout.
 
-## Submission boundary
+## What is automated now
 
-The initial software release fully automates only the prediction metric. The
-global- and local-law contracts above are frozen for discussion and early system
-development; official hidden-world suites and validators remain roadmap items.
+The software automates the prediction test on both released sub-benchmarks,
+the data-blind control, the noise-floor rule, the synthetic generator with its
+two families, and the historical fetch-and-reduce route. The global-law and
+local-law contracts above are specified here and frozen for early system
+development; the transfer harness, the rollout validator and the
+evaluator-private world suites are the next release.

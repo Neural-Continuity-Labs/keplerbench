@@ -10,3 +10,6 @@ work/
 predictions.csv
 data/example_world.csv
 data/example_world.csv.metadata.json
+data/historical/mars_declinations.csv
+data/historical/mars_declinations.meta.json
+.cache/

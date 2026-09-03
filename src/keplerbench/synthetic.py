@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, fields
 from pathlib import Path
 import csv
 import json
@@ -135,5 +135,75 @@ def write_dataset(rows: list[dict[str, object]], output: Path, config: WorldConf
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
         writer.writeheader()
         writer.writerows(rows)
-    metadata = {"generator": "keplerbench", "generator_version": "0.1.0", "seed": seed, "latent_world_parameters": asdict(config), "warning": "Do not expose latent_world_parameters to benchmark learners."}
+    from . import __version__
+
+    metadata = {"generator": "keplerbench", "generator_version": __version__, "seed": seed, "latent_world_parameters": asdict(config), "warning": "Do not expose latent_world_parameters to benchmark learners."}
     output.with_suffix(output.suffix + ".metadata.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# World families
+# ---------------------------------------------------------------------------
+
+# Each family is a dictionary of parameter ranges. A world is drawn by sampling
+# every listed parameter uniformly from its range with the generator seed, so a
+# family and a seed identify a world exactly. Ranges are evaluator-private in the
+# same sense as the parameters themselves: they are published here for
+# auditability and must not be supplied to learners as features.
+FAMILIES: dict[str, dict[str, tuple[float, float]]] = {
+    # The first family: inverse-square dynamics with everything else varied,
+    # namely the central mass, the orbit scale and eccentricity, the observer's
+    # orbit, both initial phases, the window length, the sampling density, and
+    # the angular noise (up to about 2 arcmin, Tycho's level).
+    "inverse-square": {
+        "gravitational_parameter": (0.5, 2.0),
+        "target_radius": (1.3, 3.0),
+        "target_eccentricity": (0.0, 0.6),
+        "observer_radius": (0.6, 1.2),
+        "target_phase": (0.0, 6.283185307179586),
+        "observer_phase": (0.0, 6.283185307179586),
+        "duration": (10.0, 40.0),
+        "sample_count": (120, 600),
+        "angular_noise_std": (0.0, 6.0e-4),
+    },
+    # Harder family: the force exponent itself is hidden, F(r) ~ r^-p.
+    "hidden-exponent": {
+        "gravitational_parameter": (0.5, 2.0),
+        "force_exponent": (1.5, 2.5),
+        "target_radius": (1.3, 3.0),
+        "target_eccentricity": (0.0, 0.4),
+        "observer_radius": (0.6, 1.2),
+        "target_phase": (0.0, 6.283185307179586),
+        "observer_phase": (0.0, 6.283185307179586),
+        "duration": (10.0, 40.0),
+        "sample_count": (120, 600),
+        "angular_noise_std": (0.0, 6.0e-4),
+    },
+}
+
+
+def sample_world(family: str, seed: int, **overrides: object) -> WorldConfig:
+    """Draw a world configuration from a named family, deterministically from the seed.
+
+    Every parameter listed in the family's ranges is drawn uniformly, integer
+    fields inclusively. Keyword overrides are applied after sampling, so a
+    family plus a seed identifies a world exactly unless an override is given.
+    The world_id defaults to "<family>-<seed>".
+    """
+
+    if family not in FAMILIES:
+        raise ValueError(f"unknown family {family!r}; choose from {sorted(FAMILIES)}")
+    rng = np.random.default_rng(seed)
+    integer_fields = {field.name for field in fields(WorldConfig) if field.type in ("int", int)}
+    drawn: dict[str, object] = {}
+    for name, (low, high) in FAMILIES[family].items():
+        if name in integer_fields:
+            drawn[name] = int(rng.integers(int(low), int(high) + 1))
+        else:
+            drawn[name] = float(rng.uniform(low, high))
+    drawn["world_id"] = overrides.pop("world_id", None) or f"{family}-{seed:04d}"
+    drawn["system_id"] = f"{family}-system-{seed:04d}"
+    drawn.update(overrides)
+    config = WorldConfig(**drawn)
+    config.validate()
+    return config

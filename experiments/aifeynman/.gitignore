@@ -1,0 +1,4 @@
+# rebuilt from the epoch table by prepare_pilot_inputs.py; they carry declination values
+inputs/
+# AI Feynman's working directory for a run
+runs/*/results/
