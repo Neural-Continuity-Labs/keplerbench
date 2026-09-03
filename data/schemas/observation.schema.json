@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://keplerbench.invalid/schemas/observation.schema.json",
+  "title": "KeplerBench observation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "world_id", "system_id", "observer_id", "target_id", "time",
+    "planet_dir_x", "planet_dir_y", "planet_dir_z",
+    "star_dir_x", "star_dir_y", "star_dir_z", "split"
+  ],
+  "properties": {
+    "world_id": {"type": "string"},
+    "system_id": {"type": "string"},
+    "observer_id": {"type": "string"},
+    "target_id": {"type": "string"},
+    "time": {"type": "number"},
+    "planet_dir_x": {"type": "number", "minimum": -1, "maximum": 1},
+    "planet_dir_y": {"type": "number", "minimum": -1, "maximum": 1},
+    "planet_dir_z": {"type": "number", "minimum": -1, "maximum": 1},
+    "star_dir_x": {"type": "number", "minimum": -1, "maximum": 1},
+    "star_dir_y": {"type": "number", "minimum": -1, "maximum": 1},
+    "star_dir_z": {"type": "number", "minimum": -1, "maximum": 1},
+    "split": {"enum": ["train", "validation", "test"]}
+  }
+}
