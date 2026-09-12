@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use KeplerBench, please cite the accompanying paper."
-title: "KeplerBench: Scientific Discovery from Observer-Centred Astronomical Data"
+title: "KeplerBench: A Benchmark for Scientific Discovery from Observations"
 type: software
 authors:
   - name: "Anonymous authors"
