@@ -87,7 +87,19 @@ regularities. Reversible worlds may include backward rollout.
 
 The software automates the prediction test on both released sub-benchmarks,
 the data-blind control, the noise-floor rule, the synthetic generator with its
-two families, and the historical fetch-and-reduce route. The global-law and
-local-law contracts above are specified here and frozen for early system
-development; the transfer harness, the rollout validator and the
-evaluator-private world suites are the next release.
+two families, and the historical fetch-and-reduce route. Since version 0.3.0
+it also automates the global-law transfer harness (`keplerbench.transfer`,
+with the error-versus-k curve and its normalized area) and the local-law
+rollout harness with the window-consistency check (`keplerbench.rollout`).
+Reference entries exercising both, with the data-blind control applied end to
+end, are in `experiments/synthetic_demo/`. The evaluator-private world suites
+are the next release.
+
+Two operational points the harnesses fix. A global-law entry declares the
+parameter count and meaning of its adapted per-system quantities, reported
+beside its score: an adapter large enough to absorb the law is not excluded,
+it is priced by its error-versus-k curve at small k. A local-law state may
+contain a clock, and a state that stores a fitted trajectory next to one
+satisfies the interface; it is bounded by prediction-from-window and separated
+by long-horizon rollouts and the window-consistency check, as the reference
+runs demonstrate.

@@ -1,0 +1,340 @@
+{
+  "worlds": [
+    {
+      "world_id": "inverse-square-0300",
+      "target_period": 17.304069888111723,
+      "noise_floor_arcmin": 1.0313240312354817,
+      "submissions": {
+        "dynamical": {
+          "world_id": "inverse-square-0300",
+          "state_dimension": 8,
+          "window_end": 20.0,
+          "rollout_span": 60.0375234521576,
+          "buckets": {
+            "0-5": {
+              "count": 99,
+              "median_arcminutes": 0.7386214039815399,
+              "mean_arcminutes": 0.8330711051595289
+            },
+            "5-10": {
+              "count": 100,
+              "median_arcminutes": 0.7704516118394549,
+              "mean_arcminutes": 0.8937856667142725
+            },
+            "10-20": {
+              "count": 200,
+              "median_arcminutes": 0.8018510361420751,
+              "mean_arcminutes": 0.9813042733031754
+            },
+            "20-40": {
+              "count": 400,
+              "median_arcminutes": 1.0601120764645606,
+              "mean_arcminutes": 1.2336050783868406
+            },
+            "40-60": {
+              "count": 400,
+              "median_arcminutes": 1.545788323288662,
+              "mean_arcminutes": 1.6959702570622615
+            }
+          },
+          "failure_horizon": null,
+          "threshold_arcminutes": 60.0,
+          "final_error_arcminutes": 2.1290800669472776,
+          "window_consistency": {
+            "world_id": "inverse-square-0300",
+            "windows": [
+              [
+                0.0,
+                20.0
+              ],
+              [
+                10.0,
+                20.0
+              ]
+            ],
+            "future_count": 80,
+            "median_divergence_arcminutes": 0.03220563491876868,
+            "max_divergence_arcminutes": 0.11912065679913848
+          }
+        },
+        "trajectory_clock": {
+          "world_id": "inverse-square-0300",
+          "state_dimension": 35,
+          "window_end": 20.0,
+          "rollout_span": 60.0375234521576,
+          "buckets": {
+            "0-5": {
+              "count": 99,
+              "median_arcminutes": 4104.619187029035,
+              "mean_arcminutes": 3647.606011467607
+            },
+            "5-10": {
+              "count": 100,
+              "median_arcminutes": 5224.369690367903,
+              "mean_arcminutes": 5063.04869863141
+            },
+            "10-20": {
+              "count": 200,
+              "median_arcminutes": 3756.880210474813,
+              "mean_arcminutes": 3332.9602554001353
+            },
+            "20-40": {
+              "count": 400,
+              "median_arcminutes": 8347.727645331968,
+              "mean_arcminutes": 7778.511494202913
+            },
+            "40-60": {
+              "count": 400,
+              "median_arcminutes": 8818.421078056335,
+              "mean_arcminutes": 8400.859703154198
+            }
+          },
+          "failure_horizon": 0.15009380863039112,
+          "threshold_arcminutes": 60.0,
+          "final_error_arcminutes": 6239.644246436276,
+          "window_consistency": {
+            "world_id": "inverse-square-0300",
+            "windows": [
+              [
+                0.0,
+                20.0
+              ],
+              [
+                10.0,
+                20.0
+              ]
+            ],
+            "future_count": 80,
+            "median_divergence_arcminutes": 3683.7870940290813,
+            "max_divergence_arcminutes": 5826.152715453901
+          }
+        }
+      }
+    },
+    {
+      "world_id": "inverse-square-0301",
+      "target_period": 12.581230418206825,
+      "noise_floor_arcmin": 1.0313240312354817,
+      "submissions": {
+        "dynamical": {
+          "world_id": "inverse-square-0301",
+          "state_dimension": 8,
+          "window_end": 20.0,
+          "rollout_span": 60.0375234521576,
+          "buckets": {
+            "0-5": {
+              "count": 99,
+              "median_arcminutes": 0.5191942506170233,
+              "mean_arcminutes": 0.7134338251319733
+            },
+            "5-10": {
+              "count": 100,
+              "median_arcminutes": 0.6796481425311139,
+              "mean_arcminutes": 0.7343384608330287
+            },
+            "10-20": {
+              "count": 200,
+              "median_arcminutes": 0.7153245181783066,
+              "mean_arcminutes": 0.857019629733381
+            },
+            "20-40": {
+              "count": 400,
+              "median_arcminutes": 0.6466311418919648,
+              "mean_arcminutes": 0.7877948701048678
+            },
+            "40-60": {
+              "count": 400,
+              "median_arcminutes": 0.7194044590799115,
+              "mean_arcminutes": 0.8736047746952679
+            }
+          },
+          "failure_horizon": null,
+          "threshold_arcminutes": 60.0,
+          "final_error_arcminutes": 1.4554417378679527,
+          "window_consistency": {
+            "world_id": "inverse-square-0301",
+            "windows": [
+              [
+                0.0,
+                20.0
+              ],
+              [
+                10.0,
+                20.0
+              ]
+            ],
+            "future_count": 80,
+            "median_divergence_arcminutes": 0.04559507278347916,
+            "max_divergence_arcminutes": 0.6031960587321695
+          }
+        },
+        "trajectory_clock": {
+          "world_id": "inverse-square-0301",
+          "state_dimension": 35,
+          "window_end": 20.0,
+          "rollout_span": 60.0375234521576,
+          "buckets": {
+            "0-5": {
+              "count": 99,
+              "median_arcminutes": 3384.816216621999,
+              "mean_arcminutes": 3028.985232149463
+            },
+            "5-10": {
+              "count": 100,
+              "median_arcminutes": 4927.426240916528,
+              "mean_arcminutes": 4405.364064264278
+            },
+            "10-20": {
+              "count": 200,
+              "median_arcminutes": 3649.1426893986386,
+              "mean_arcminutes": 3669.828050640747
+            },
+            "20-40": {
+              "count": 400,
+              "median_arcminutes": 6318.793466611052,
+              "mean_arcminutes": 5423.719176245428
+            },
+            "40-60": {
+              "count": 400,
+              "median_arcminutes": 8729.081688462564,
+              "mean_arcminutes": 7572.162364995003
+            }
+          },
+          "failure_horizon": 0.05003126954346371,
+          "threshold_arcminutes": 60.0,
+          "final_error_arcminutes": 7748.246917998229,
+          "window_consistency": {
+            "world_id": "inverse-square-0301",
+            "windows": [
+              [
+                0.0,
+                20.0
+              ],
+              [
+                10.0,
+                20.0
+              ]
+            ],
+            "future_count": 80,
+            "median_divergence_arcminutes": 537.8730170329152,
+            "max_divergence_arcminutes": 6157.783724023653
+          }
+        }
+      }
+    },
+    {
+      "world_id": "inverse-square-0302",
+      "target_period": 19.397704315702637,
+      "noise_floor_arcmin": 1.0313240312354817,
+      "submissions": {
+        "dynamical": {
+          "world_id": "inverse-square-0302",
+          "state_dimension": 8,
+          "window_end": 20.0,
+          "rollout_span": 60.0375234521576,
+          "buckets": {
+            "0-5": {
+              "count": 99,
+              "median_arcminutes": 0.8006047736824481,
+              "mean_arcminutes": 0.8925187771625223
+            },
+            "5-10": {
+              "count": 100,
+              "median_arcminutes": 0.7442946339525257,
+              "mean_arcminutes": 0.8671054966037571
+            },
+            "10-20": {
+              "count": 200,
+              "median_arcminutes": 0.833704985466676,
+              "mean_arcminutes": 0.9720709603602571
+            },
+            "20-40": {
+              "count": 400,
+              "median_arcminutes": 0.8344517381897614,
+              "mean_arcminutes": 1.0454155667655565
+            },
+            "40-60": {
+              "count": 400,
+              "median_arcminutes": 1.0965184376407138,
+              "mean_arcminutes": 1.3426180562524161
+            }
+          },
+          "failure_horizon": null,
+          "threshold_arcminutes": 60.0,
+          "final_error_arcminutes": 1.5054964118551886,
+          "window_consistency": {
+            "world_id": "inverse-square-0302",
+            "windows": [
+              [
+                0.0,
+                20.0
+              ],
+              [
+                10.0,
+                20.0
+              ]
+            ],
+            "future_count": 80,
+            "median_divergence_arcminutes": 0.17768535930127924,
+            "max_divergence_arcminutes": 0.24492234758655268
+          }
+        },
+        "trajectory_clock": {
+          "world_id": "inverse-square-0302",
+          "state_dimension": 35,
+          "window_end": 20.0,
+          "rollout_span": 60.0375234521576,
+          "buckets": {
+            "0-5": {
+              "count": 99,
+              "median_arcminutes": 3477.7292735279216,
+              "mean_arcminutes": 4291.441671809223
+            },
+            "5-10": {
+              "count": 100,
+              "median_arcminutes": 6395.686518463866,
+              "mean_arcminutes": 6354.768832087933
+            },
+            "10-20": {
+              "count": 200,
+              "median_arcminutes": 4997.205498411382,
+              "mean_arcminutes": 4615.884247899164
+            },
+            "20-40": {
+              "count": 400,
+              "median_arcminutes": 9115.925742361078,
+              "mean_arcminutes": 9189.42557303732
+            },
+            "40-60": {
+              "count": 400,
+              "median_arcminutes": 3979.641527554509,
+              "mean_arcminutes": 4567.513131953956
+            }
+          },
+          "failure_horizon": 0.05003126954346371,
+          "threshold_arcminutes": 60.0,
+          "final_error_arcminutes": 7229.354427570451,
+          "window_consistency": {
+            "world_id": "inverse-square-0302",
+            "windows": [
+              [
+                0.0,
+                20.0
+              ],
+              [
+                10.0,
+                20.0
+              ]
+            ],
+            "future_count": 80,
+            "median_divergence_arcminutes": 9974.184101676277,
+            "max_divergence_arcminutes": 10785.288862477184
+          }
+        }
+      }
+    }
+  ],
+  "window_end": 20.0,
+  "threshold_arcminutes": 60.0,
+  "runtime_seconds": 8.2
+}

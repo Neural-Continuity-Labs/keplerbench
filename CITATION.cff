@@ -3,7 +3,19 @@ message: "If you use KeplerBench, please cite the accompanying paper."
 title: "KeplerBench: A Benchmark for Scientific Discovery from Observations"
 type: software
 authors:
-  - name: "Anonymous authors"
-version: 0.2.0
-date-released: 2026-09-03
+  - family-names: "Malhotra"
+    given-names: "Akash"
+    affiliation: "Universite Paris-Saclay"
+version: 0.3.0
+date-released: 2026-10-20
 license: Apache-2.0
+preferred-citation:
+  type: conference-paper
+  title: "KeplerBench: A Benchmark for Scientific Discovery from Observations"
+  authors:
+    - family-names: "Malhotra"
+      given-names: "Akash"
+      affiliation: "Universite Paris-Saclay"
+  collection-title: "NeurIPS 2026 Workshop on Sim2Science: ML with Imperfect Scientific Models"
+  year: 2026
+  url: "https://openreview.net/forum?id=RdErwlc7jJ"

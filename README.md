@@ -116,7 +116,10 @@ data/schemas/               machine-readable public data contract
 docs/protocol.md            three capabilities, data-blind control, noise floor, what is automated
 docs/historical.md          historical Mars: source, rights, reduction, split, provenance plan
 docs/synthetic.md           synthetic worlds: generator, families with their ranges
-experiments/pilot/          Table 2: fitting code, results summary, acceptance suite
+experiments/pilot/          Table 2: fitting code, results summary, acceptance suite,
+                            campaign and cutoff sensitivity
+experiments/synthetic_demo/ reference entries and end-to-end runs of the transfer and
+                            rollout tests, with figures and committed results
 experiments/aifeynman/      the AI Feynman controls: scripts, raw frontiers, scoring
 examples/                   example submission metadata
 tests/                      package tests
@@ -124,6 +127,6 @@ tests/                      package tests
 
 ## Status, provenance and license
 
-Version 0.2.0 automates the prediction test on both released sub-benchmarks, the data-blind control, the noise-floor rule, the synthetic generator with two families, and the historical fetch-and-reduce route. The global-law and local-law contracts are specified and frozen for early system development, and the transfer harness, the rollout validator, evaluator-private world suites and the multi-planet historical release are the next steps, as the paper's conclusion says. Generated datasets record their seed and world parameters in a sidecar file, and the generator is deterministic for a fixed seed. The historical table is rebuilt from its source with a reported checksum, every pilot fit is seeded, and the results file records the library versions, the seeds and the wall time. The package makes no network call except the explicit `fetch-historical` download, and continuous integration runs the tests on every push without fetching the source file.
+Version 0.3.0 automates the prediction test on both released sub-benchmarks, the data-blind control, the noise-floor rule, the synthetic generator with two families, the historical fetch-and-reduce route, the global-law transfer harness (`keplerbench.transfer`) and the local-law rollout harness with its window-consistency check (`keplerbench.rollout`). Reference entries exercising every test end to end, with the data-blind control applied, are in [`experiments/synthetic_demo/`](experiments/synthetic_demo/README.md). Evaluator-private world suites and the multi-planet historical release are the next steps, as the paper's conclusion says. Generated datasets record their seed and world parameters in a sidecar file, and the generator is deterministic for a fixed seed. The historical table is rebuilt from its source with a reported checksum, every pilot fit is seeded, and the results file records the library versions, the seeds and the wall time. The package makes no network call except the explicit `fetch-historical` download, and continuous integration runs the tests on every push without fetching the source file.
 
-Citation metadata are in [`CITATION.cff`](CITATION.cff), with author details withheld during double-blind review. The code and documentation are released under the Apache License 2.0, and AI Feynman is used under its MIT license. Tycho's observations are public domain, whereas Pafko's transcription of them carries a copyright notice without a license, so it is fetched from its source rather than redistributed, and no committed file carries declination values derived from it.
+Citation metadata are in [`CITATION.cff`](CITATION.cff). The code and documentation are released under the Apache License 2.0, and AI Feynman is used under its MIT license. Tycho's observations are public domain, whereas Pafko's transcription of them carries a copyright notice without a license, so it is fetched from its source rather than redistributed, and no committed file carries declination values derived from it.

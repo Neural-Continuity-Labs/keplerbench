@@ -1,0 +1,65 @@
+{
+  "k": 128,
+  "worlds": [
+    {
+      "world_id": "hidden-exponent-0200",
+      "p_true": 2.163919971379413,
+      "p_fitted": 2.1640174512496144,
+      "abs_error": 9.747987020158888e-05
+    },
+    {
+      "world_id": "hidden-exponent-0201",
+      "p_true": 2.0366333278673543,
+      "p_fitted": 2.035997777986535,
+      "abs_error": 0.0006355498808194859
+    },
+    {
+      "world_id": "hidden-exponent-0202",
+      "p_true": 1.9436559079744091,
+      "p_fitted": 1.9433678486779364,
+      "abs_error": 0.0002880592964726869
+    },
+    {
+      "world_id": "hidden-exponent-0203",
+      "p_true": 1.8443080286828606,
+      "p_fitted": 1.8444003024402387,
+      "abs_error": 9.227375737808075e-05
+    },
+    {
+      "world_id": "hidden-exponent-0204",
+      "p_true": 2.311975107969766,
+      "p_fitted": 2.3128005435610555,
+      "abs_error": 0.0008254355912895583
+    },
+    {
+      "world_id": "hidden-exponent-0205",
+      "p_true": 1.7280602940661796,
+      "p_fitted": 1.7314981462772119,
+      "abs_error": 0.0034378522110323217
+    },
+    {
+      "world_id": "hidden-exponent-0206",
+      "p_true": 1.8884371262273665,
+      "p_fitted": 1.8893259237702331,
+      "abs_error": 0.0008887975428666373
+    },
+    {
+      "world_id": "hidden-exponent-0207",
+      "p_true": 1.994823655172914,
+      "p_fitted": 2.020659213944132,
+      "abs_error": 0.025835558771218015
+    },
+    {
+      "world_id": "hidden-exponent-0208",
+      "p_true": 2.1819333787652653,
+      "p_fitted": 2.1820722528301078,
+      "abs_error": 0.00013887406484247578
+    },
+    {
+      "world_id": "hidden-exponent-0209",
+      "p_true": 2.083833341161581,
+      "p_fitted": 2.0839498744412164,
+      "abs_error": 0.00011653327963534466
+    }
+  ]
+}
