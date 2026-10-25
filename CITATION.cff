@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use KeplerBench, please cite the accompanying paper."
-title: "KeplerBench: A Benchmark for Scientific Discovery from Observations"
+title: "KeplerBench: A Benchmark for Scientific Discovery from Astronomical Observations"
 type: software
 authors:
   - family-names: "Malhotra"
@@ -11,7 +11,7 @@ date-released: 2026-10-25
 license: MIT
 preferred-citation:
   type: conference-paper
-  title: "KeplerBench: A Benchmark for Scientific Discovery from Observations"
+  title: "KeplerBench: A Benchmark for Scientific Discovery from Astronomical Observations"
   authors:
     - family-names: "Malhotra"
       given-names: "Akash"
