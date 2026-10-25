@@ -60,9 +60,11 @@ and the paper's figures. The committed results are the ones the paper quotes.
 ## What the committed results show
 
 - Inverse-square targets (10 unseen worlds): the frozen law walks from 4041 to
-  3.5 arcmin mean held-out error as k grows from 4 to 128, reaching per-world
-  noise floors on nine of ten worlds, while the flexible baseline stays near
-  4000 arcmin at every budget. Normalized AUC 0.42 against 1.18 rad.
+  3.5 arcmin mean held-out error as k grows from 4 to 128, coming within 1.0 to
+  2.4 times the oracle's residual on eight of ten worlds at k = 128 (the other
+  two sit at 4.0 and 13.2 times), while the flexible baseline stays near 4000
+  arcmin at every budget (32 times the law's error at k = 32, 1312 times at
+  k = 128). Normalized AUC 0.42 against 1.18 rad.
 - Hidden-exponent targets (10 unseen worlds): frozen p = 2 plateaus at 928
   arcmin at k = 128, and its per-world error grows with the world's true
   departure from inverse square (Spearman 0.67, p = 0.03). The
@@ -77,8 +79,9 @@ and the paper's figures. The committed results are the ones the paper quotes.
   target periods): the dynamical state stays at 0.5 to 1.5 arcmin in every
   horizon bucket, never crosses the 60-arcmin threshold, and moves by at most
   0.6 arcmin under re-initialization from a different window; the control
-  crosses the threshold within 0.1 to 0.2 time units (one to two observation
-  intervals) and moves by 538 to 9974 arcmin median under re-initialization.
+  crosses the threshold at the first observation after its window on two
+  worlds and the third on the other (0.05 to 0.15 time units) and moves by 538
+  to 9974 arcmin median under re-initialization.
 
 ## Conventions
 

@@ -186,6 +186,9 @@ def _write_markdown(results: dict[str, object]) -> None:
 def _write_figure(results: dict[str, object]) -> None:
     import matplotlib
     matplotlib.use("Agg")
+    # NeurIPS requires Type 1 or embedded TrueType fonts; matplotlib defaults to Type 3.
+    matplotlib.rcParams["pdf.fonttype"] = 42
+    matplotlib.rcParams["ps.fonttype"] = 42
     import matplotlib.pyplot as plt
 
     figure, axes = plt.subplots(1, 2, figsize=(8.0, 3.1), sharey=True)
