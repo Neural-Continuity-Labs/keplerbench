@@ -7,8 +7,8 @@ authors:
     given-names: "Akash"
     affiliation: "Universite Paris-Saclay"
 version: 0.3.0
-date-released: 2026-10-20
-license: Apache-2.0
+date-released: 2026-10-25
+license: MIT
 preferred-citation:
   type: conference-paper
   title: "KeplerBench: A Benchmark for Scientific Discovery from Observations"

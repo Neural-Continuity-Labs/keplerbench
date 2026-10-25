@@ -8,7 +8,7 @@ version = "0.3.0"
 description = "A benchmark for scientific discovery from observer-centered astronomical observations: Tycho's Mars record and synthetic worlds, scored on prediction, global law and local law"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "Apache-2.0"}
+license = {text = "MIT"}
 dependencies = ["numpy>=1.24"]
 
 [project.optional-dependencies]
